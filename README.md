@@ -110,7 +110,7 @@ estará detallado cada endpoint.
 
     Con este metodo POST inicias sesion y recibis tu token JWT.
 
-      RUTA:
+    RUTA:
     POST /auth/login
 
     Ejemplo de cuerpo de solicitud:
