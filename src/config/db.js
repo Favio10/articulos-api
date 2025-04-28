@@ -6,7 +6,7 @@ const {LOCAL_DB_USER, LOCAL_DB_PASSWORD, LOCAL_DB_HOST} = process.env;
 const sequelize = new Sequelize(
     `postgres://${LOCAL_DB_USER}:${LOCAL_DB_PASSWORD}@${LOCAL_DB_HOST}/articulos`,
     {
-        logging: false,
+        logging: true,
         native: false, 
     }
 )

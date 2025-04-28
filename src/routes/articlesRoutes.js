@@ -9,9 +9,18 @@ const {
     eliminarArticulo
 } = require('../controllers/articlesControllers.js')
 
+const {
+    validarCrearArticulo,
+    validarActualizarArticulo,
+    validarEliminarArticulo,
+    validarResultados
+} = require('../middlewares/articuloValidator.js');
+
+
 router.get('/', getArticulos);
-router.post('/', crearArticulo);
-router.patch('/:id',actualizarArticulo)
-router.delete('/:id', eliminarArticulo)
+router.get('/:id', getArticuloById);
+router.post('/', validarCrearArticulo, validarResultados, crearArticulo);
+router.patch('/:id', validarActualizarArticulo, validarResultados, actualizarArticulo);
+router.patch('/:id', validarEliminarArticulo, validarResultados, eliminarArticulo);
 
 module.exports = router;
